@@ -10,7 +10,7 @@ This script is a modified version of [movies.js](https://github.com/chhoumann/qu
 # How to create a list of movies to watch
 
 ## Demo
-[demo.webm](https://github.com/lemachinarbo/tmdb-obsidian/blob/54d3bc50804249a0ae78b42b56b66a03ede54341/docs/media/demo.webm)
+[demo.webm](https://github.com/lemachinarbo/tmdb-obsidian/assets/153532864/4124b33f-249a-4941-8d49-262d3b1a3b46)
 
 
 
