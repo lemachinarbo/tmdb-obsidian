@@ -10,7 +10,7 @@ This script is a modified version of [movies.js](https://github.com/chhoumann/qu
 # How to create a list of movies to watch
 
 ## Demo
-[demo.webm](https://github.com/lemachinarbo/tmdb-obsidian/assets/153532864/4124b33f-249a-4941-8d49-262d3b1a3b46)
+[demo.webm](https://github.com/lemachinarbo/tmdb-obsidian/blob/54d3bc50804249a0ae78b42b56b66a03ede54341/docs/media/demo.webm)
 
 
 
@@ -46,8 +46,7 @@ This script is a modified version of [movies.js](https://github.com/chhoumann/qu
     - [{{VALUE:original_title}}]({{VALUE:movieLink}}) ({{VALUE:releaseYear}}) - {{VALUE:directorLink}}{{VALUE:genre}}, {{VALUE:vote_average}}
     ```
 
-## Step 4: Creating a[demo.webm](https://github.com/lemachinarbo/tmdb-obsidian/assets/153532864/d614febe-da9c-4a2d-9308-a8d44194b1ea)
- choice
+## Step 4: Creating a choice.
 
 Now we need to create a choice to activate the macro:
 
