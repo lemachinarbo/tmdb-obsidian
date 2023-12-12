@@ -50,7 +50,7 @@ This script is a modified version of [movies.js](https://github.com/chhoumann/qu
     - [Forrest Gump](https://movie-web.app/media/tmdb-movie-13) (1994) - Robert Zemeckis - Comedy - 8.476
     ```
 
-To create your own query, check all the variables available.
+To create your own query, check all the [variables](#variables) available.
 
 ## Step 4: Creating a choice.
 
