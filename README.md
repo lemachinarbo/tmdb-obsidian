@@ -150,7 +150,8 @@ Also, you can use any of this custom variables:
   ],
   "movieLink": "https://movie-web.app/media/tmdb-movie-13",
   "fileName": "Forrest Gump",
-  "typeLink": "[[Movies]]"
+  "typeLink": "[[Movies]]",
+  "poster": "https://image.tmdb.org/t/p/w500/arw2vcBveWOVZr6pxd9XTd1TdQa.jpg",
 }
 
 ```

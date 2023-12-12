@@ -64,6 +64,9 @@ async function start(params, settings) {
     
     }
 
+    const imagesURL = "https://image.tmdb.org/t/p/";
+    const thumbWidth = "w500";
+
     const selectedShow = await getByTmdbId(choice.id);
 
     const cast = selectedShow.credits.cast.map(actor => actor.name);
@@ -75,6 +78,8 @@ async function start(params, settings) {
     const firstGenre = selectedShow.genres.length > 0 ? selectedShow.genres[0].name : 'No genre available';
     const movieID = selectedShow.id; 
     const movieLink = `${MOVIE_API_URL}${movieID}`;
+    const poster = selectedShow.poster_path;
+    const posterURL = `${imagesURL}${thumbWidth}${poster}`;
 
 
     QuickAdd.variables = {
@@ -90,6 +95,7 @@ async function start(params, settings) {
         movieLink: movieLink,
         fileName: replaceIllegalFileNameCharactersInString(selectedShow.title),
         typeLink: `[[Movies]]`,
+        poster: posterURL,
     
     }
 
