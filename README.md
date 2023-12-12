@@ -1,6 +1,6 @@
 # TMDb connection for Obsidian and QuickAdd
 
-_tmdb-obsidian_ is a script for [QuickAdd](https://github.com/chhoumann/quickadd/) that allows you to add links for watching movies to your Obsidian Vault notes. 
+_tmdb-obsidian_ is a script for [QuickAdd](https://github.com/chhoumann/quickadd/) that allows you to add links for watching movies to your [Obsidian](https://github.com/obsidianmd/) Vault notes. 
 
 By typing the movie's name, it returns the movie details from [The Movie Database (TMDb) API](https://developer.themoviedb.org/reference/intro/getting-started) and a link to watch the movie on [Movie-Web](https://github.com/movie-web/movie-web).
 
@@ -8,6 +8,8 @@ This script is a modified version of [movies.js](https://github.com/chhoumann/qu
 
 
 # How to create a list of movies to watch
+
+I use this script to mantain a simple note with my watchlist. While, there are other amazing approaches that you can try to create a [personal movie database](https://minimal.guide/guides/movie-database), where each movie is a note, I prefer not to replicate what's already available on websites as TMDb, IMDB, etc. That's the magic of Obsidian ―you can have it your way.
 
 ## Demo
 [demo.webm](https://github.com/lemachinarbo/tmdb-obsidian/assets/153532864/4124b33f-249a-4941-8d49-262d3b1a3b46)
@@ -21,10 +23,14 @@ This script is a modified version of [movies.js](https://github.com/chhoumann/qu
 
 ## Step 1: Setup the files
 
+The first step is to copy the script that will help us fetch movie information and create a note to store our movies:
+
 - Download the [tmdb.js](https://github.com/lemachinarbo/tmdb-obsidian/blob/4ec73db1fdeebf4e7e05d6439dc598e714b2545f/tmdb.js) and copy it into your vault (e.g. create a  `/scripts` folder and paste it there).
-- Create a new note in your Vault to store the movies (e.g: `Movies to watch`)
+- Create a new note in your Vault to store the movies (e.g: `Movies to watch`, `Watchlist`)
 
 ## Step 2: Create a macro in QuickAdd
+
+Now, we need to set up a series of actions—searching for the movie, pulling its information, and pasting the details into our watchlist. For this, we can leverage on the Macros feature of QuickAdd. Let's create one:
 
 - Open the QuickAdd plugin settings (Click on the settings icon or `Ctrl` + `,` and then scroll to QuickAdd under Communnity Plugins on the left).
 - Click on `Manage Macros` button.
@@ -60,7 +66,7 @@ Now we need to create a choice to activate the macro:
 - Add a name for the macro (e.g: `Movie`), select `Macro` in the dropdown and click `Add choice`.
 - Click on the settings icon `⚙️` besides the new macro and select the macro we created before `movies` (or the name you choosed). And That's it! Close all the menus and let's add some movies.
 
-## Step 5: Adding a movie
+## Step 5: Testing, adding a movie
 
 - Open the `command palette` (`Ctrl` + `p`).
 - Type QuickAdd and select `QuickAdd: Run QuickAdd ` and press `Enter`.
