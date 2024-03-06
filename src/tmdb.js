@@ -80,6 +80,7 @@ async function start(params, settings) {
     const movieLink = `${MOVIE_API_URL}${movieID}`;
     const poster = selectedShow.poster_path;
     const posterURL = `${imagesURL}${thumbWidth}${poster}`;
+    const rating = selectedShow.vote_average;
 
 
     QuickAdd.variables = {
@@ -96,8 +97,11 @@ async function start(params, settings) {
         fileName: replaceIllegalFileNameCharactersInString(selectedShow.title),
         typeLink: `[[Movies]]`,
         poster: posterURL,
-    
+        rating: rating.toFixed(1)
+
     }
+
+    console.log("s", QuickAdd.variables);
 
 }
 

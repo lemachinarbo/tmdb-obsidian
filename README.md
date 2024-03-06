@@ -48,12 +48,12 @@ Now, we need to set up a series of actions—searching for the movie, pulling it
 - Toggle on the `Capture format` option.
 - Copy and paste this format:
     ```
-    - [{{VALUE:original_title}}]({{VALUE:movieLink}}) ({{VALUE:releaseYear}}) - {{VALUE:directorLink}}{{VALUE:genre}}, {{VALUE:vote_average}}
+    - [{{VALUE:original_title}}]({{VALUE:movieLink}}) ({{VALUE:releaseYear}}) - {{VALUE:directorNames}} - {{VALUE:genre}}, {{VALUE:rating}}
     ```
     This will generate 
 
     ```
-    - [Forrest Gump](https://movie-web.app/media/tmdb-movie-13) (1994) - Robert Zemeckis - Comedy - 8.476
+    - [Forrest Gump](https://movie-web.app/media/tmdb-movie-13) (1994) - Robert Zemeckis - Comedy - 8.5
     ```
 
 To create your own query, check all the [variables](#variables) available.
@@ -158,6 +158,7 @@ Also, you can use any of this custom variables:
   "fileName": "Forrest Gump",
   "typeLink": "[[Movies]]",
   "poster": "https://image.tmdb.org/t/p/w500/arw2vcBveWOVZr6pxd9XTd1TdQa.jpg",
+  "rating": "8.6"
 }
 
 ```
