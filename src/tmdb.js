@@ -1,7 +1,7 @@
 //TODO
 
 
-//Get your API key here https://developer.themoviedb.org/docs
+//! Get your API key here https://developer.themoviedb.org/docs
 
 const API_KEY_OPTION = 'TMDB API Key';
 const SEARCH_API_URL = 'https://api.themoviedb.org/3/search/movie';
