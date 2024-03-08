@@ -1,34 +1,33 @@
-
-
-const notice = msg => new Notice(msg, 5000);
-const log = msg => console.log(msg);
+//TODO
 
 
 //Get your API key here https://developer.themoviedb.org/docs
 
-const API_KEY_OPTION = "TMDB API Key";
-const SEARCH_API_URL = "https://api.themoviedb.org/3/search/movie";
-const MOVIE_DETAILS_URL = "https://api.themoviedb.org/3/movie/";
-const MOVIE_API_URL = "https://movie-web.app/media/tmdb-movie-";
+const API_KEY_OPTION = 'TMDB API Key';
+const SEARCH_API_URL = 'https://api.themoviedb.org/3/search/movie';
+const MOVIE_DETAILS_URL = 'https://api.themoviedb.org/3/movie/';
+const MOVIE_API_URL = 'https://movie-web.app/media/tmdb-movie-';
 
 
+// eslint-disable-next-line no-undef
 module.exports = {
 
     entry: start,
     settings: {
-        name: "TMDB, movies",
-        author: "Lemachi Barno",
-        credits: "Based on Christian B. B. Houmann Movies script, with the help of ChatGPT 🤖",
+        name: 'TMDB, movies',
+        author: 'Lemachi Barno',
+        credits: 'Based on Christian B. B. Houmann Movies script, with the help of ChatGPT 🤖',
         options: {
             [API_KEY_OPTION]: {
-                type: "text",
-                defaultValue: "",
-                placeholder: "TMDB API Key",
+                type: 'text',
+                defaultValue: '',
+                placeholder: 'TMDB API Key',
             },
         }
     }
 
-}
+};
+
 
 let QuickAdd;
 let Settings;
@@ -39,12 +38,12 @@ async function start(params, settings) {
     QuickAdd = params;
     Settings = settings;
 
-    const query = await QuickAdd.quickAddApi.inputPrompt("Enter movie title: ");
+    const query = await QuickAdd.quickAddApi.inputPrompt('Enter movie title: ');
     
     if (!query) {
     
-        notice("No query entered.");
-        throw new Error("No query entered.");
+        notice('No query entered.');
+        throw new Error('No query entered.');
     
     }
 
@@ -52,8 +51,8 @@ async function start(params, settings) {
 
     if (!results || !results.length) {
     
-        notice("No results found.");
-        throw new Error("No results found.");
+        notice('No results found.');
+        throw new Error('No results found.');
     
     }
 
@@ -61,13 +60,13 @@ async function start(params, settings) {
 
     if (!choice) {
     
-        notice("No choice selected.");
-        throw new Error("No choice selected.");
+        notice('No choice selected.');
+        throw new Error('No choice selected.');
     
     }
 
-    const imagesURL = "https://image.tmdb.org/t/p/";
-    const thumbWidth = "w500";
+    const imagesURL = 'https://image.tmdb.org/t/p/';
+    const thumbWidth = 'w500';
 
     const selectedShow = await getByTmdbId(choice.id);
 
@@ -97,13 +96,12 @@ async function start(params, settings) {
         genres: linkifyList(genres),
         movieLink: movieLink,
         fileName: replaceIllegalFileNameCharactersInString(selectedShow.title),
-        typeLink: `[[Movies]]`,
+        typeLink: '[[Movies]]',
         poster: posterURL,
         rating: rating.toFixed(1)
 
-    }
+    };
 
-    console.log("s", QuickAdd.variables);
 
 }
 
@@ -119,8 +117,8 @@ async function getByQuery(query) {
 
     const searchResults = await apiGet(SEARCH_API_URL, {
 
-        "api_key": Settings[API_KEY_OPTION],
-        "query": query,
+        'api_key': Settings[API_KEY_OPTION],
+        'query': query,
 
     });
 
@@ -134,35 +132,14 @@ async function getByTmdbId(id) {
    
     const res = await apiGet(`${MOVIE_DETAILS_URL}${id}`, {
    
-        "api_key": Settings[API_KEY_OPTION],
-        "append_to_response": "credits"
+        'api_key': Settings[API_KEY_OPTION],
+        'append_to_response': 'credits'
    
     });
 
     //console.log(res);
 
     return res;
-
-}
-
-
-function linkifyList(list) {
- 
-    return list.map(item => `\n  - "[[${item.trim()}]]"`).join("");
-
-}
-
-
-function commaSeparatedList(list) {
-
-    return list.join(', ');
-
-}
-
-
-function replaceIllegalFileNameCharactersInString(string) {
-
-    return string.replace(/[\\,#%&\{\}\/*<>$\'\":@]*/g, '');    
 
 }
 
@@ -181,11 +158,40 @@ async function apiGet(url, data) {
 
     if (!res.ok) {
 
-        notice("Error fetching data.");
-        throw new Error("Error fetching data.");
+        notice('Error fetching data.');
+        throw new Error('Error fetching data.');
 
     }
 
     return res.json();
+
+}
+
+
+function linkifyList(list) {
+ 
+    return list.map(item => `\n  - "[[${item.trim()}]]"`).join('');
+
+}
+
+
+function commaSeparatedList(list) {
+
+    return list.join(', ');
+
+}
+
+
+function replaceIllegalFileNameCharactersInString(string) {
+
+    return string.replace(/[\\,#%&{}/*<>$'":@]*/g, '');    
+
+}
+
+
+function notice(msg) {
+
+    // eslint-disable-next-line no-undef
+    return new Notice(msg, 5000);
 
 }

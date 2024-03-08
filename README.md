@@ -48,7 +48,7 @@ Now, we need to set up a series of actions—searching for the movie, pulling it
 - Toggle on the `Capture format` option.
 - Copy and paste this format:
     ```
-    - [{{VALUE:original_title}}]({{VALUE:movieLink}}) ({{VALUE:releaseYear}}) - {{VALUE:directorNames}} - {{VALUE:genre}}, {{VALUE:rating}}
+    - [{{VALUE:original_title}}]({{VALUE:movieLink}}) ({{VALUE:releaseYear}}) - {{VALUE:directorNames}} - {{VALUE:genre}} -  {{VALUE:rating}}
     ```
     This will generate 
 
