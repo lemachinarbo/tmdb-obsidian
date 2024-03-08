@@ -1,7 +1,6 @@
-//TODO
 
 
-//! Get your API key here https://developer.themoviedb.org/docs
+// #Get your API key here https://developer.themoviedb.org/docs
 
 const API_KEY_OPTION = 'TMDB API Key';
 const SEARCH_API_URL = 'https://api.themoviedb.org/3/search/movie';
@@ -9,7 +8,6 @@ const MOVIE_DETAILS_URL = 'https://api.themoviedb.org/3/movie/';
 const MOVIE_API_URL = 'https://movie-web.app/media/tmdb-movie-';
 
 
-// eslint-disable-next-line no-undef
 module.exports = {
 
     entry: start,
@@ -122,7 +120,6 @@ async function getByQuery(query) {
 
     });
 
-    //console.log(searchResults.results);
 
     return searchResults.results;
 }
@@ -137,7 +134,6 @@ async function getByTmdbId(id) {
    
     });
 
-    //console.log(res);
 
     return res;
 
@@ -184,14 +180,13 @@ function commaSeparatedList(list) {
 
 function replaceIllegalFileNameCharactersInString(string) {
 
-    return string.replace(/[\\,#%&{}/*<>$'":@]*/g, '');    
+    return string.replace(/[\\,#%&{}/*<>$'":@]*/g, '');
 
 }
 
 
 function notice(msg) {
 
-    // eslint-disable-next-line no-undef
     return new Notice(msg, 5000);
 
 }
