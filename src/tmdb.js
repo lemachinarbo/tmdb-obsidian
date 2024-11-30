@@ -8,7 +8,7 @@ const SEARCH_API_URL_MOVIE = 'https://api.themoviedb.org/3/search/movie';
 const SEARCH_API_URL_TV = 'https://api.themoviedb.org/3/search/tv';
 const MOVIE_DETAILS_URL = 'https://api.themoviedb.org/3/movie/';
 const TV_DETAILS_URL = 'https://api.themoviedb.org/3/tv/';
-const MOVIE_API_URL = 'https://movie-web.app/media/tmdb-movie-';
+const MOVIE_API_URL = 'https://movie-web.click/#/movie/"';
 const TV_API_URL = '';
 
 // eslint-disable-next-line no-undef
